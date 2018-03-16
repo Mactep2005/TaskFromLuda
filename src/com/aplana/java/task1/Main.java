@@ -1,5 +1,6 @@
 package com.aplana.java.task1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -8,6 +9,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
             // write your code here
+       /* int intSize=...;
             TestStaticMethod [] arr=new TestStaticMethod[7];
             for (int i = 0; i <= 3; i++) {
                 arr[i]=new TestStaticMethod(i+"_fname",i+"_sName");
@@ -16,11 +18,23 @@ public class Main {
             arr[5]=new TestStaticMethod(5+"_fname",5+"_sName");
             SalaryPerson sp =new SalaryPerson("manager1","manager1");
             sp.setSalary(5000.30f);
-            arr[6]=sp;
+            arr[6]=sp;*/
+
+        // floatSize=...;
+            ArrayList<TestStaticMethod> arr=new ArrayList<>();
+            for (int i = 0; i <= 3; i++) {
+                arr.add(new TestStaticMethod(i+"_fname",i+"_sName"));
+            }
+            arr.add(new TestStaticMethod(4,"-End-","-End-"));
+            arr.add(new TestStaticMethod(5+"_fname",5+"_sName"));
+            SalaryPerson sp =new SalaryPerson("manager1","manager1");
+            sp.setSalary(5000.30f);
+            arr.add(sp);
+
             printTop();
             for (TestStaticMethod as:arr ) {
                 if(as instanceof SalaryPerson)
-                    System.out.printf("!%1$8d!%2$17s!%3$16s!%4$110.2f!%n",as.getId(),as.getfName(),as.getsName(),((SalaryPerson) as).getSalary());
+                    System.out.printf("!%1$8d!%2$17s!%3$16s!%4$11.2f!%n",as.getId(),as.getfName(),as.getsName(),((SalaryPerson) as).getSalary(),as.getClass());
                 else
                     System.out.printf("!%1$8d!%2$17s!%3$16s!           !%n",as.getId(),as.getfName(),as.getsName());
 
